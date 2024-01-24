@@ -56,18 +56,6 @@ export const StudentsList = ({
     }))
   }
 
-  const handleSort = (property: string) => {
-    const newOrder =
-      filter.propertie === property && filter.order === "Ascending"
-        ? "Descending"
-        : "Ascending";
-
-    setFilter({
-      propertie: property,
-      order: newOrder,
-    });
-  };
-
   const sortedStudents = [...students].sort((a, b) => {
     const propA = filter.propertie === "name" ? a.name : a.mark;
     const propB = filter.propertie === "name" ? b.name : b.mark;
